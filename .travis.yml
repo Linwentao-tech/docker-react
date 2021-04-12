@@ -1,0 +1,9 @@
+sudo: required
+service:
+  -docker
+
+before_install:
+  -docker build -t Linwentao-tech/docker-react -f Dockerfile.dev .
+
+script: :
+  -docker run  Linwentao-tech/docker-react python forcast.py
